@@ -1,2 +1,27 @@
-<h1>Scooters#show</h1>
-<p>Find me in app/views/scooters/show.html.erb</p>
+<div class="container center">
+  <div class="row">
+  <div class="col-xs-6">
+    <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://medias.la-becanerie.com/modeles/6189.jpg');">
+      <div class="card-category"></div>
+        <div class="card-description"> <% @scooter %></div>
+    </div>
+  </div>
+
+   <div class="col-xs-6">
+    <div class="card-show">
+      <ul class="card-category">
+       <li> MARQUE:<%=@scooter.marque%> </li>
+        <li> MODELE: <%=@scooter.modele%> </li>
+        <li>ANNÉE: <%= @scooter.annee%> </li>
+        <li>kILOMETRAGE: <%=@scooter.kilometrage%> </li>
+        <li>CATEGORIE: <%=@scooter.categorie%> </li>
+        <li>PERMIS: <%=@scooter.permis%> </li>
+        <li>DISPONIBILITÉ: <%=@scooter.disponible%> </li>
+        <li>PRIX/JOUR: <%=@scooter.prix%> </li>
+        <%= link_to "retour", root_path, class:"button" %>
+        <a class="button">reserver</a>
+        </ul>
+    </div>
+  </div>
+  </div>
+</div>
