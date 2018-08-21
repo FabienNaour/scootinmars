@@ -1,4 +1,5 @@
 class ScootersController < ApplicationController
+
   def index
     @scooters = Scooter.all
   end
@@ -6,6 +7,7 @@ class ScootersController < ApplicationController
   def show
     @scooter = Scooter.find(params[:id])
   end
+
 
 end
 
