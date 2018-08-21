@@ -11,7 +11,7 @@
   <% @scooters.each do |scooter| %>
   <div class="col-xs-12 col-sm-4" id="scooter-position">
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://medias.la-becanerie.com/modeles/6189.jpg');">
-      <div class="card-category"><%= scooter.marque %><br> <%= link_to scooter.modele, scooter_path(scooter) %></div>
+      <div class="card-category"><%= scooter.marque %><br> <%= render 'partials/resa', scooter: scooter %></div>
         <div class="card-description">
 
         </div>

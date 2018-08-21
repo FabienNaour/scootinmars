@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :scooters, only: [:index, :show]
+  resources :scooters, only: :index
   root to: 'scooters#index'
   devise_for :users
   root to: "pages#home"
