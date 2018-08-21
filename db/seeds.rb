@@ -21,7 +21,7 @@ scooter1.boutique = boutique
 scooter1.save
 
 scooter2 = Scooter.new(
-   marque: 'Yamha' ,
+   marque: 'Yamaha' ,
    modele: 'cygnus X',
    annee: '2009',
    kilometrage: '5502 kms',
