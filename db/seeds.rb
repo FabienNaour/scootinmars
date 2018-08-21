@@ -21,7 +21,7 @@ scooter1.boutique = boutique
 scooter1.save
 
 scooter2 = Scooter.new(
-   marque: 'Yamha' ,
+   marque: 'Yamaha' ,
    modele: 'cygnus X',
    annee: '2009',
    kilometrage: '5502 kms',
@@ -119,5 +119,32 @@ scooter8.boutique = boutique
 
 scooter8.save
 
-puts "seeds terminés"
+resa1 = Reservation.new(
+  date_debut: "21/08/2018",
+  date_fin: "22/08/2018"
+)
 
+resa2 = Reservation.new(
+  date_debut: "22/08/2018",
+  date_fin: "23/08/2018"
+)
+
+user1 = User.new(
+  nom: 'legal',
+  prenom: 'julien',
+  email: 'julien.legal@legal.com',
+  password: 'moncul',
+  age: '26'
+)
+
+user1.save
+
+resa1.scooter = scooter1
+resa1.user = user1
+resa1.save
+
+resa2.scooter = scooter2
+resa2.user = user1
+resa2.save
+
+puts "seeds terminés"
