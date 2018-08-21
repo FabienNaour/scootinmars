@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :scooters, through: :reservations
   validates :prenom   , presence: true
   validates :nom   , presence: true
-  validates :email, format: { with: /\A.*@.*\.com\z/ }, presence: true
-  validates :age  , numericality: { greater_than: 18 }, presence: true
+  validates :age  , numericality: { greater_than: 17 }, presence: true
 end
 
