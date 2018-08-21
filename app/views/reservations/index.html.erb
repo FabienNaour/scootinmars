@@ -1,2 +1,22 @@
-<h1>Mes Réservations</h1>
-
+<div class="container">
+  <div class="row">
+    <h1>Mes Réservations</h1>
+    <div class="col-xs-6 col-xs-offset-3"><% @reservations.each do |reservation| %>
+        <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <h3><%= reservation.scooter.marque %></h3>
+          <p><%= reservation.scooter.modele %></p>
+        </div>
+        <div class="message-body">
+          <p>du <%= reservation.date_debut %></p>
+          <p>au <%= reservation.date_fin %></p>
+        </div>
+        <div class="message-status">
+          <p class="status pending">En cours</p>
+          <p class="price">€345</p>
+        </div>
+      </div>
+      <% end %></div>
+  </div>
+</div>
