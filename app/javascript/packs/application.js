@@ -1,4 +1,4 @@
 import "bootstrap";
 
-import { scrollToAnchor } from '../components/btnVotreCocktail';
+import { scrollToAnchor } from '../components/modal';
 scrollToAnchor();

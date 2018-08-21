@@ -1,5 +1,5 @@
 <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
-  Votre cocktail
+  RESERVER
 </button>
 
 <!-- Modal -->
@@ -8,17 +8,23 @@
     <div class="modal-content">
       <div class="modal-header">
 
+             <%= scooter.marque %>
+             <%= scooter.modele%>
+
       <div class="modal-body">
-        <%= form_for @reservation do |f| %>
-          <%= f.label :date_debut %>
-        <%= f.text_field :date_debut %>
-        <%= f.label :date_fin %>
-        <%= f.text_field :date_fin %>
+         <ul>
+            <li>ANNÉE: <%= scooter.annee%> </li>
+            <li>kILOMETRAGE: <%= scooter.kilometrage%> </li>
+            <li>CATEGORIE: <%= scooter.categorie%> </li>
+            <li>PERMIS: <%= scooter.permis%> </li>
+            <li>DISPONIBILITÉ: <%= scooter.disponible%> </li>
+            <li>PRIX/JOUR: <%= scooter.prix%> </li>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn" data-dismiss="modal">Fermer</button>
-        <%=f.button :submit  %>
-      <% end %>
+        <%= link_to "retour", root_path, class:"button" %>
+        <a class="button">reserver</a>
+
       </div>
     </div>
   </div>
