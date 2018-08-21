@@ -8,9 +8,51 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <a href="" class="navbar-wagon-item navbar-wagon-link">Trouver un scooter</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
+    <% if user_signed_in? %>
+      <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Logout</a> -->
+ <!--      <%= link_to "Logout" , destroy_user_session_path, method: :delete , class: "navbar-wagon-item navbar-wagon-link"%> -->
 
+      <div class="dropdown">
+      <!--    <i class="far fa-address-card "></i> -->
+   <!--        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %> -->
+
+          <%= link_to "#", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" do %>
+            <i class="far fa-address-card " style="font-size:40px;"></i>
+          <% end %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: " Update profile") %>
+              <% end %>
+            </li>
+<!--             <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <% end %>
+            </li> -->
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+      </div>
+
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+   <% end %>
   </div>
+
+
+
+
+
+
+
+
+
+
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
@@ -23,3 +65,5 @@
     </div>
   </div>
 </div>
+
+
