@@ -8,5 +8,6 @@ class User < ApplicationRecord
   validates :prenom   , presence: true
   validates :nom   , presence: true
   validates :age  , numericality: { greater_than: 17 }, presence: true
+  mount_uploader :docpermis, PhotoUploader
 end
 
