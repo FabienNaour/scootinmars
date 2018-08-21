@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'scooters/index'
-  get 'scooters/show'
+  resources :scooters, only: [:index, :show]
+  root to: 'scooters#index'
   devise_for :users
   root to: "pages#home"
   get 'reservations/index'
