@@ -1,4 +1,5 @@
 
+
 puts "destruction des scooteurs et boutiques"
 Scooter.destroy_all
 Boutique.destroy_all
