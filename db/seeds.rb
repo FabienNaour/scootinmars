@@ -1,122 +1,130 @@
 
 
-puts "destruction des scooteurs et boutiques"
+puts "destruction des scooters, resa et boutiques"
+Reservation.destroy_all
 Scooter.destroy_all
 Boutique.destroy_all
 
+
 puts " lancement des seeds"
+
+boutique1 = Boutique.new(
+    nom: 'Top Scooter',
+    adresse: '160 rue paradis 13006 marseille',
+    email: 'topscooter@gmail.com',
+    telephone: '06-22-12-13-14'
+  )
+boutique1.save
+boutique2 = Boutique.new(
+    nom: 'Marseille Scooter',
+    adresse: '15 rue girardin 13007 marseille',
+    email: 'marseillescooter@hotmail.com',
+    telephone: '06-14-00-13-14'
+  )
+boutique2.save
+boutique3 = Boutique.new(
+    nom: 'Scooter au panier',
+    adresse: '25 rue du refuge 13002 marseille',
+    email: 'panierscooter@hotmail.com',
+    telephone: '06-00-01-02-03'
+  )
+boutique3.save
 scooter1 = Scooter.new(
    marque: 'Peugeot' ,
    modele: 'Kisbee 50' ,
    annee: '2017' ,
-   kilometrage: '10000 kms',
-   categorie: 'essence' ,
-   prix: '10'
+   kilometrage: 10000,
+   categorie: 'electrique' ,
+   prix: '10',
+   url: "https://media.motoservices.com/media/cache/vehicle_detail/media/vehicle/229/Peugeot%20kisbee%2050.jpg"
 )
 
-boutique = Boutique.new
-
-scooter1.boutique = boutique
-
+scooter1.boutique = boutique1
 scooter1.save
 
 scooter2 = Scooter.new(
    marque: 'Yamaha' ,
    modele: 'cygnus X',
    annee: '2009',
-   kilometrage: '5502 kms',
+   kilometrage: 5502,
    categorie: '125 cm3',
-   prix: '13'
+   prix: '13',
+   url: "https://i.ytimg.com/vi/t3ZS0yL-Ihc/hqdefault.jpg"
 )
-boutique = Boutique.new
-
-scooter2.boutique = boutique
-
+scooter2.boutique = boutique2
 scooter2.save
 
 scooter3 = Scooter.new(
    marque: 'PIAGGIO',
    modele: 'Beverly 350 Sport Touring' ,
    annee: '2017' ,
-   kilometrage: ' 6700 kms',
+   kilometrage: 6700,
    categorie: '350 cm3',
-   prix: '10'
+   prix: '10',
+   url:"https://media.motoservices.com/media/cache/vehicle_detail/media/vehicle/185/Beverly%20SportTouring.jpg"
 )
-boutique = Boutique.new
-
-scooter3.boutique = boutique
-
+scooter3.boutique = boutique3
 scooter3.save
 
 scooter4 = Scooter.new(
    marque: 'MBK',
    modele: 'OVETTO 4 temos UBS',
    annee: '2013',
-   kilometrage: ' 24500 kms',
+   kilometrage: 24500,
    categorie: '50 cm3',
-   prix: '14'
+   prix: '14',
+   url:"https://www.mbk-jubault.fr/IMG/jpg/2011_MBK_OVETTO4_EU_PBMF_STU_002_tcm99-387214.jpg"
 )
-boutique = Boutique.new
-
-scooter4.boutique = boutique
-
+scooter4.boutique = boutique1
 scooter4.save
 
 scooter5 = Scooter.new(
   marque: ' KYMCO' ,
   modele: 'Agility 16+' ,
   annee: '2016' ,
-  kilometrage: ' 8500 kms',
+  kilometrage: 8500,
   categorie: ' 125 cm3',
-  prix: '12'
+  prix: '12',
+  url:"https://www.ledperf.co.uk/images/models/ledperf.com/W500/2096_kymco-agility-125-city-16.jpg"
   )
-boutique = Boutique.new
-
-scooter5.boutique = boutique
-
+scooter5.boutique = boutique2
 scooter5.save
 
 scooter6 = Scooter.new(
   marque: ' SYM' ,
   modele: 'MIO 50' ,
   annee: '2016' ,
-  kilometrage: ' 2500 kms',
+  kilometrage: 2500,
   categorie: '50 cm3',
-  prix: '12'
+  prix: '12',
+  url:"https://cdp.azureedge.net/products/USA/SYM/2017/SCOOTER/SCOOTER/MIO_50/50/MIDNIGHT_BLACK/2000000017.jpg"
  )
-boutique = Boutique.new
-
-scooter6.boutique = boutique
-
+scooter6.boutique = boutique3
 scooter6.save
 
   scooter7 = Scooter.new(
   marque: ' PIAGGIO' ,
   modele: 'LIBERTY 50 4T EURO 4' ,
   annee: '2018' ,
-  kilometrage: ' 1000 kms',
+  kilometrage: 1000,
   categorie: '50 cm3',
-  prix: '12'
+  prix: '12',
+  url:"http://www.piaggio.com/mediaObject/piaggio/master/global/models/gamma-liberty/piaggio-liberty-50-euro4/piaggio-liberty-50-euro4-DX-bianco/original/piaggio-liberty-50-euro4-DX-bianco.png"
 )
-boutique = Boutique.new
-
-scooter7.boutique = boutique
-
+scooter7.boutique = boutique1
 scooter7.save
 
   scooter8 = Scooter.new(
   marque: 'PIAGGIO' ,
   modele: 'MEDLEY 125 I-GET ABS' ,
   annee: '2018' ,
-  kilometrage: ' 500 kms',
+  kilometrage: 500,
   categorie: '125 cm3',
-  prix: '50'
+  prix: '50',
+  url: "http://www.piaggio.com/mediaObject/piaggio/master/global/models/gamma-medley/piaggio-medley-125-150-abs/Medley125_3-4AntDX_BiancoPerla/original/Medley125_3-4AntDX_BiancoPerla.png"
 )
 
-boutique = Boutique.new
-
-scooter8.boutique = boutique
-
+scooter8.boutique = boutique2
 scooter8.save
 
 resa1 = Reservation.new(
@@ -133,18 +141,27 @@ user1 = User.new(
   nom: 'legal',
   prenom: 'julien',
   email: 'julien.legal@legal.com',
-  password: 'moncul',
+  password: 'password',
   age: '26'
 )
 
+
+user2 = User.new(
+  nom: 'naour',
+  prenom: 'fabien',
+  email: 'fabien.naour@gmail.com',
+  password: 'password',
+  age: '51'
+)
 user1.save
+user2.save
 
 resa1.scooter = scooter1
 resa1.user = user1
 resa1.save
 
 resa2.scooter = scooter2
-resa2.user = user1
+resa2.user = user2
 resa2.save
 
 puts "seeds terminés"
