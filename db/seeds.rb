@@ -8,27 +8,28 @@ Boutique.destroy_all
 
 puts " lancement des seeds"
 
-boutique1 = Boutique.new(
+
+boutique1 = Boutique.create(
     nom: 'Top Scooter',
     adresse: '160 rue paradis 13006 marseille',
     email: 'topscooter@gmail.com',
     telephone: '06-22-12-13-14'
   )
-boutique1.save
-boutique2 = Boutique.new(
+sleep 5
+boutique2 = Boutique.create(
     nom: 'Marseille Scooter',
     adresse: '15 rue girardin 13007 marseille',
     email: 'marseillescooter@hotmail.com',
     telephone: '06-14-00-13-14'
   )
-boutique2.save
-boutique3 = Boutique.new(
+sleep 5
+boutique3 = Boutique.create(
     nom: 'Scooter au panier',
     adresse: '25 rue du refuge 13002 marseille',
     email: 'panierscooter@hotmail.com',
     telephone: '06-00-01-02-03'
   )
-boutique3.save
+
 scooter1 = Scooter.new(
    marque: 'Peugeot' ,
    modele: 'Kisbee 50' ,
