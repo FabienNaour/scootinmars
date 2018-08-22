@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :scooters, only: :index
   root to: 'scooters#index'
   devise_for :users
-  root to: "pages#home"
   get 'reservations/index'
   get 'reservations/show'
   get 'scooters/scooter_id/reservations/new', to: 'reservations#new'
