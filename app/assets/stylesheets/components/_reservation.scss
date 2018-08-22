@@ -12,7 +12,7 @@
 }
 .message-name {
   padding-left: 10px;
-  min-width: 100px;
+  min-width: 180px;
 }
 .message-name h3 {
   font-size: 16px;
@@ -25,9 +25,10 @@
   margin: 5px;
 }
 .message-body {
-  padding-left: 10px;
+  padding: 5px;
   font-size: 14px;
   color: rgba(0,0,0,0.7);
+  text-align: center;
 }
 .message-body {
   padding-left: 20px;
@@ -43,6 +44,11 @@
 .message-status {
   font-size: 14px;
   font-weight: bold;
+  min-width: 70px
+}
+.message-status p{
+  margin: 0;
+  padding: 5px;
 }
 .status.accepted {
   color: #04A366;
@@ -52,4 +58,10 @@
 }
 .status.pending {
   color: lightgrey;
+}
+.reservations {
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #F5F5F5;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
 }

@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Votre Réservation</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="crop">
+        <img src="<%= @scooter.url %>" alt="scooter img" class="scooter_photo">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="reservation_form">
+        <%= simple_form_for [@scooter, @reservation] do |f| %>
+          <%= f.input :date_debut, as: :date, html5: true %>
+          <%= f.input :date_fin, as: :date, html5: true %>
+          <%= f.submit "réserver", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,24 @@
 class ReservationsController < ApplicationController
+    before_action :find_scooter, only: [:new, :create]
+
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user_id: current_user).order(date_fin: :desc)
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.where(user_id: current_user)
   end
 
   def new
     @reservation = Reservation.new
-    @reservation.user
-    @reservation.scooter
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.user
+    @reservation.user = current_user
+    @reservation.scooter = @scooter
     @reservation.save
-    redirect_to reservations_index_path
+    redirect_to reservations_path
   end
 
   private
@@ -26,4 +27,7 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:date_debut, :date_fin, :scooter_id)
   end
 
+  def find_scooter
+    @scooter = Scooter.find(params[:scooter_id])
+  end
 end

@@ -1,22 +1,29 @@
 <div class="container">
   <div class="row">
     <h1>Mes Réservations</h1>
-    <div class="col-xs-6 col-xs-offset-3"><% @reservations.each do |reservation| %>
-        <div class="message">
-        <img class="crop avatar-large" src="https://images.pexels.com/photos/159192/vespa-roller-motor-scooter-cult-159192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-        <div class="message-name">
-          <h3><%= reservation.scooter.marque %></h3>
-          <p><%= reservation.scooter.modele %></p>
-        </div>
-        <div class="message-body">
-          <p>du <%= reservation.date_debut %></p>
-          <p>au <%= reservation.date_fin %></p>
-        </div>
-        <div class="message-status">
-          <p class="status pending">En cours</p>
-          <p class="price">€345</p>
-        </div>
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="reservations">
+        <% @reservations.each do |reservation| %>
+          <div class="message">
+            <img class="avatar-large" src=<%= reservation.scooter.url %>>
+            <div class="message-name">
+              <h3><%= reservation.scooter.marque %></h3>
+              <p><%= reservation.scooter.modele %></p>
+            </div>
+            <div class="message-body">
+              <p>du <%= reservation.date_debut %> au <%= reservation.date_fin %></p>
+            </div>
+            <div class="message-status">
+              <% if reservation.date_fin < Time.now %>
+                <p class="status pending">Terminé</p>
+              <% else %>
+                <p class="status accepted">En cours</p>
+              <% end %>
+              <p class="price"><%= ((Date.parse(reservation.date_fin) - Date.parse(reservation.date_debut)) * reservation.scooter.prix).to_i %>€</p>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <% end %></div>
+    </div>
   </div>
 </div>

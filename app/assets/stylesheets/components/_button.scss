@@ -20,3 +20,11 @@
   color: #fff;
   background-color: #74acc9;
 }
+
+a.button {
+  text-decoration: none;
+  color: white;
+  &:active {
+    text-decoration:none;
+  }
+}
