@@ -1,30 +1,27 @@
-<button type="button" data-toggle="modal" data-target="#exampleModalCenter">
-  RESERVER
-</button>
-
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="myModal<%= scooter.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-
-             <%= scooter.marque %>
-             <%= scooter.modele%>
-
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">
+          <%= scooter.marque %>
+          <%= scooter.modele %>
+        </h4>
+      </div>
       <div class="modal-body">
-         <ul>
-            <li>ANNÉE: <%= scooter.annee%> </li>
-            <li>kILOMETRAGE: <%= scooter.kilometrage%> </li>
-            <li>CATEGORIE: <%= scooter.categorie%> </li>
-            <li>PERMIS: <%= scooter.permis%> </li>
-            <li>DISPONIBILITÉ: <%= scooter.disponible%> </li>
-            <li>PRIX/JOUR: <%= scooter.prix%> </li>
+        <ul>
+          <li>ANNÉE: <%= scooter.annee %></li>
+          <li>kILOMETRAGE: <%= scooter.kilometrage %></li>
+          <li>CATEGORIE: <%= scooter.categorie %></li>
+          <li>PERMIS: <%= scooter.permis %></li>
+          <li>DISPONIBILITÉ: <%= scooter.disponible %></li>
+          <li>PRIX/JOUR: <%= scooter.prix %></li>
         </ul>
       </div>
       <div class="modal-footer">
-        <%= link_to "retour", root_path, class:"button" %>
-        <a class="button">reserver</a>
-
+        <button type="button" class="btn btn-primary">réserver</button>
       </div>
     </div>
   </div>
+</div>
