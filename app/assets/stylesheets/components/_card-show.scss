@@ -1,17 +1,40 @@
-li {
-  margin-top: 20px;
-  color: grey;
+.modal-body table {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img {
+  color: white;
+  height: 50vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-position: center;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: white;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  text-align: center;
+  text-shadow: 2px 2px grey;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
 .button {
   margin-top: 40px;
 }
 
-.center {
-  align-items: center;
-  height: calc(100vh - 160px);
-  justify: center;
-}
 link {
   text-decoration: none;
   color: white;
