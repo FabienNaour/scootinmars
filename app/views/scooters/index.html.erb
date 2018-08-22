@@ -2,9 +2,26 @@
   <div class="banner-content">
     <h1>Scoot in Mars</h1>
     <p>location de scooter sur Marseille</p>
-    <a class="button">reserver</a>
+    <a class="button">Reserver un scooter</a>
   </div>
 </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <p></p>
+    </div>
+  </div>
+</div>
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 400px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
 
 <div class="container">
   <div class="row">
