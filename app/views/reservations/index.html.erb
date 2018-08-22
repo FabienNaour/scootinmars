@@ -19,7 +19,7 @@
               <% else %>
                 <p class="status accepted">En cours</p>
               <% end %>
-              <p class="price"><%= reservation.scooter.prix %>€</p>
+              <p class="price"><%= ((Date.parse(reservation.date_fin) - Date.parse(reservation.date_debut)) * reservation.scooter.prix).to_i %>€</p>
             </div>
           </div>
         <% end %>

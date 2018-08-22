@@ -4,6 +4,7 @@ puts "destruction des scooters, resa et boutiques"
 Reservation.destroy_all
 Scooter.destroy_all
 Boutique.destroy_all
+User.destroy_all
 
 
 puts " lancement des seeds"
@@ -41,7 +42,7 @@ scooter1 = Scooter.new(
 )
 
 scooter1.boutique = boutique1
-scooter1.save
+scooter1.save!
 
 scooter2 = Scooter.new(
    marque: 'Yamaha' ,
@@ -53,7 +54,7 @@ scooter2 = Scooter.new(
    url: "https://i.ytimg.com/vi/t3ZS0yL-Ihc/hqdefault.jpg"
 )
 scooter2.boutique = boutique2
-scooter2.save
+scooter2.save!
 
 scooter3 = Scooter.new(
    marque: 'PIAGGIO',
@@ -65,7 +66,7 @@ scooter3 = Scooter.new(
    url:"https://media.motoservices.com/media/cache/vehicle_detail/media/vehicle/185/Beverly%20SportTouring.jpg"
 )
 scooter3.boutique = boutique3
-scooter3.save
+scooter3.save!
 
 scooter4 = Scooter.new(
    marque: 'MBK',
@@ -77,7 +78,7 @@ scooter4 = Scooter.new(
    url:"https://www.mbk-jubault.fr/IMG/jpg/2011_MBK_OVETTO4_EU_PBMF_STU_002_tcm99-387214.jpg"
 )
 scooter4.boutique = boutique1
-scooter4.save
+scooter4.save!
 
 scooter5 = Scooter.new(
   marque: ' KYMCO' ,
@@ -89,7 +90,7 @@ scooter5 = Scooter.new(
   url:"https://www.ledperf.co.uk/images/models/ledperf.com/W500/2096_kymco-agility-125-city-16.jpg"
   )
 scooter5.boutique = boutique2
-scooter5.save
+scooter5.save!
 
 scooter6 = Scooter.new(
   marque: ' SYM' ,
@@ -101,7 +102,7 @@ scooter6 = Scooter.new(
   url:"https://cdp.azureedge.net/products/USA/SYM/2017/SCOOTER/SCOOTER/MIO_50/50/MIDNIGHT_BLACK/2000000017.jpg"
  )
 scooter6.boutique = boutique3
-scooter6.save
+scooter6.save!
 
   scooter7 = Scooter.new(
   marque: ' PIAGGIO' ,
@@ -113,7 +114,7 @@ scooter6.save
   url:"http://www.piaggio.com/mediaObject/piaggio/master/global/models/gamma-liberty/piaggio-liberty-50-euro4/piaggio-liberty-50-euro4-DX-bianco/original/piaggio-liberty-50-euro4-DX-bianco.png"
 )
 scooter7.boutique = boutique1
-scooter7.save
+scooter7.save!
 
   scooter8 = Scooter.new(
   marque: 'PIAGGIO' ,
@@ -126,16 +127,26 @@ scooter7.save
 )
 
 scooter8.boutique = boutique2
-scooter8.save
+scooter8.save!
 
 resa1 = Reservation.new(
-  date_debut: "21/08/2018",
-  date_fin: "22/08/2018"
+  date_debut: "2018-08-21",
+  date_fin: "2018-08-22"
 )
 
 resa2 = Reservation.new(
-  date_debut: "22/08/2018",
-  date_fin: "23/08/2018"
+  date_debut: "2018-08-22",
+  date_fin: "2018-08-23"
+)
+
+resa3 = Reservation.new(
+  date_debut: "2018-08-18",
+  date_fin: "2018-08-22"
+)
+
+resa4 = Reservation.new(
+  date_debut: "2018-08-10",
+  date_fin: "2018-08-30"
 )
 
 user1 = User.new(
@@ -146,7 +157,6 @@ user1 = User.new(
   age: '26'
 )
 
-
 user2 = User.new(
   nom: 'naour',
   prenom: 'fabien',
@@ -154,15 +164,39 @@ user2 = User.new(
   password: 'password',
   age: '51'
 )
-user1.save
-user2.save
+user3 = User.new(
+  nom: 'beddouk',
+  prenom: 'gisele',
+  email: 'gisele@gmail.com',
+  password: 'password',
+  age: '25'
+)
+user4 = User.new(
+  nom: 'glatt',
+  prenom: 'sebastien',
+  email: 'seb@gmail.com',
+  password: 'password',
+  age: '18'
+)
+user1.save!
+user2.save!
+user3.save!
+user4.save!
 
 resa1.scooter = scooter1
 resa1.user = user1
-resa1.save
+resa1.save!
 
 resa2.scooter = scooter2
 resa2.user = user2
-resa2.save
+resa2.save!
+
+resa3.scooter = scooter3
+resa3.user = user3
+resa3.save!
+
+resa4.scooter = scooter4
+resa4.user = user4
+resa4.save!
 
 puts "seeds terminés"
