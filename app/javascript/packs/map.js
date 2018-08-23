@@ -21,6 +21,21 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const mapElement = document.getElementById('map');
 const markers = JSON.parse(mapElement.dataset.markers);
+// MODIF FAB
+// [{
+//   "name": "Top Scooter",
+//   "markers": [5.3811128, 43.2832026]
+// }, {
+//   "name": "Marseille Scooter",
+//   "markers": [5.3577398, 43.2895637]
+// }, {
+//   "name": "Scooter au panier",
+//   "markers": [5.3676323, 43.2986109]
+// }]
+// const ma = JSON.parse(mapElement.dataset.markers);
+// console.log(ma[0]["name"])
+// console.log(ma[0]["markers"])
+// console.log(ma[0]["markers"][0])
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmFiaWVubmFvdXIiLCJhIjoiY2psNTRsZDAyMHJnODNwcThueTZtZ2VsNyJ9.fGDPKWN6bzi5AAGizI-h8A';
 
@@ -31,9 +46,6 @@ const map = new mapboxgl.Map({
     zoom: 12
 });
 
-
-
-//var popup = new mapboxgl.Popup().setHTML('<h3>piGPS</h3><p style=\"text-align: Left;\"><u>Lat:</u> -24.675964<br> 45.7 km </p>');
 
 markers.forEach((marker) => {
 

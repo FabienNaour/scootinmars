@@ -25,8 +25,14 @@
 
           <div class="permis">
             <!-- <div class="row"> -->
-              <%= f.input :docpermis , label: "Driving license" %>
-              <%= f.input :docpermis_cache, as: :hidden %>
+              <% if current_user.permis %>
+                <%= f.input :docpermis , label: "Driving license VALIDATED" %>
+              <% elsif !current_user.permis && current_user.docpermis.present?%>
+                <%= f.input :docpermis , label: "Driving license VALIDATION IN PROGRESS " %>
+              <%else  %>
+              <%= f.input :docpermis , label: "Driving license " %>
+              <%end  %>
+                <%= f.input :docpermis_cache, as: :hidden %>
 
               <% if current_user.docpermis.present?%>
                 <%= cl_image_tag resource.docpermis, height: 200, width: 200, crop: :fill %>

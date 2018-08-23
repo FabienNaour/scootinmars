@@ -31,10 +31,23 @@ skip_before_action :authenticate_user! , only:[:index , :show]
         boutique.latitude
       ]
     end
+
+    # MODIF FABIEN
+    # @boutiques = Boutique.where.not(latitude: nil, longitude: nil)
+    # @boutiqueparam = @boutiques.map do |boutique|
+    #   {
+    #     "name": boutique.nom,
+    #     "markers": [
+    #       boutique.longitude,
+    #       boutique.latitude
+    #     ]
+    #   }
+    #   end
   end
 
   def show
     @scooter = Scooter.find(params[:id])
   end
+
 end
 
