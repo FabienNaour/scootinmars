@@ -149,18 +149,28 @@ resa4 = Reservation.new(
   date_fin: "2018-08-30"
 )
 
+useradmin = User.new(
+  nom: 'admin',
+  prenom: 'admin',
+  email: 'admin@gmail.com',
+  password: 'password',
+  age: '26',
+  admin: true
+)
+
 user1 = User.new(
   nom: 'legal',
   prenom: 'julien',
-  email: 'julien.legal@legal.com',
+  email: 'julien@gmail.com',
   password: 'password',
-  age: '26'
+  age: '26',
+
 )
 
 user2 = User.new(
   nom: 'naour',
   prenom: 'fabien',
-  email: 'fabien.naour@gmail.com',
+  email: 'fabien@gmail.com',
   password: 'password',
   age: '51'
 )
@@ -178,6 +188,7 @@ user4 = User.new(
   password: 'password',
   age: '18'
 )
+useradmin.save!
 user1.save!
 user2.save!
 user3.save!
@@ -191,12 +202,6 @@ resa2.scooter = scooter2
 resa2.user = user2
 resa2.save!
 
-resa3.scooter = scooter3
-resa3.user = user3
-resa3.save!
 
-resa4.scooter = scooter4
-resa4.user = user4
-resa4.save!
 
 puts "seeds terminés"
