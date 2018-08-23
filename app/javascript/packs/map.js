@@ -31,11 +31,18 @@ const map = new mapboxgl.Map({
     zoom: 12
 });
 
+
+
+//var popup = new mapboxgl.Popup().setHTML('<h3>piGPS</h3><p style=\"text-align: Left;\"><u>Lat:</u> -24.675964<br> 45.7 km </p>');
+
 markers.forEach((marker) => {
-  new mapboxgl.Marker()
+
+  new mapboxgl.Marker({color: '#ef0075'})
   .setLngLat(marker)
+  .setPopup(new mapboxgl.Popup().setHTML('<h4>Boutique</h4>'))
   .addTo(map);
-});
+})
+
 
 const bounds = new mapboxgl.LngLatBounds();
 
@@ -44,8 +51,6 @@ markers.forEach(function(m) {
 });
 
 map.fitBounds(bounds, { padding: 100 });
-
-
 
 
 
