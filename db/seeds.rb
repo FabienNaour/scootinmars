@@ -56,6 +56,18 @@ scooter2 = Scooter.new(
 scooter2.boutique = boutique2
 scooter2.save!
 
+scooter2a = Scooter.new(
+   marque: 'Yamaha' ,
+   modele: 'cygnus X',
+   annee: '2010',
+   kilometrage: 5502,
+   categorie: '125 cm3',
+   prix: '13',
+   url: "https://i.ytimg.com/vi/t3ZS0yL-Ihc/hqdefault.jpg"
+)
+scooter2a.boutique = boutique3
+scooter2a.save!
+
 scooter3 = Scooter.new(
    marque: 'PIAGGIO',
    modele: 'Beverly 350 Sport Touring' ,
@@ -146,7 +158,7 @@ resa3 = Reservation.new(
 
 resa4 = Reservation.new(
   date_debut: "10/08/2018",
-  date_fin: "30/08/2018"
+  date_fin: "12/08/2018"
 )
 
 useradmin = User.new(
@@ -202,6 +214,8 @@ resa2.scooter = scooter2
 resa2.user = user2
 resa2.save!
 
-
+resa3.scooter = scooter3
+resa3.user = user3
+resa3.save!
 
 puts "seeds terminés"
