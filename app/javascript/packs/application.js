@@ -1,4 +1,4 @@
 import "bootstrap";
-
-import { scrollToAnchor } from '../components/scroll';
-scrollToAnchor();
+import "../plugins/flatpickr"
+import "../components/scroll"
+import "../components/prix"

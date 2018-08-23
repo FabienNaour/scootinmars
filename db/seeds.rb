@@ -130,23 +130,23 @@ scooter8.boutique = boutique2
 scooter8.save!
 
 resa1 = Reservation.new(
-  date_debut: "2018-08-21",
-  date_fin: "2018-08-22"
+  date_debut: "21/08/2018",
+  date_fin: "22/08/2018"
 )
 
 resa2 = Reservation.new(
-  date_debut: "2018-08-22",
-  date_fin: "2018-08-23"
+  date_debut: "22/08/2018",
+  date_fin: "23/08/2018"
 )
 
 resa3 = Reservation.new(
-  date_debut: "2018-08-18",
-  date_fin: "2018-08-22"
+  date_debut: "18/08/2018",
+  date_fin: "22/08/2018"
 )
 
 resa4 = Reservation.new(
-  date_debut: "2018-08-10",
-  date_fin: "2018-08-30"
+  date_debut: "10/08/2018",
+  date_fin: "30/08/2018"
 )
 
 user1 = User.new(
