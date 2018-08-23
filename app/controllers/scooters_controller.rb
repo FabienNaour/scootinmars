@@ -1,8 +1,18 @@
 class ScootersController < ApplicationController
 skip_before_action :authenticate_user! , only:[:index , :show]
+
   def index
-    @scooters = Scooter.all
-    @scooter= Scooter.new
+    if params[:query].present?
+      sql_query = " \
+        scooters.marque ILIKE :query \
+        OR scooters.modele ILIKE :query \
+        OR scooters.categorie ILIKE :query \
+        "
+        @scooters = Scooter.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @scooters = Scooter.all
+      @scooter= Scooter.new
+    end
 
     # GOOGLE
     # @boutiques = Boutique.where.not(latitude: nil, longitude: nil)

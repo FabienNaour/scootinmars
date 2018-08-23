@@ -26,9 +26,18 @@ data-markers="<%= @markers.to_json %>"
 
 <script>var LandbotLiveConfig = { index: 'https://landbot.io/u/H-68806-AWRGC0YZYLYJPVUK/index.html', accent: '#ef0075' };</script><script src="https://static.helloumi.com/umiwebchat/umiwebchat.js?v=1534976287004" defer></script>
 
+<div class="research-scooter">
+  <%= form_tag scooters_path(anchor:"scooters-index"), method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a scooter"
+    %>
+  <% end %>
 
+</div>
 
-<div class="container">
+<div class="container" id="scooters-index">
   <div class="row">
     <% @scooters.each do |scooter| %>
       <%= render 'partials/resa', scooter: scooter %>
@@ -37,10 +46,14 @@ data-markers="<%= @markers.to_json %>"
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= scooter.url %>);">
             <div class="card-category"><%= scooter.marque %></div>
             <div class="card-description"><%= scooter.modele %></div>
+            <div class="card-description"><% scooter.categorie %></div>
             <div class="card-prix"><%= scooter.prix %> €/j</div>
           </div>
         </a>
       </div>
     <% end %>
   </div>
+   <% if params[:query].present? %>
+    <%= link_to "Home", scooters_path(anchor:"scooters-index"), class:"btn-primary" %>
+    <% end %>
 </div>
