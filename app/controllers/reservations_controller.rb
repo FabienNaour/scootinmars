@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-    before_action :find_scooter, only: [:new, :create]
+    before_action :find_scooter, only: [:new, :create, :refresh_price]
 
   def index
     @reservations = Reservation.where(user_id: current_user).order(date_fin: :desc)
@@ -19,6 +19,9 @@ class ReservationsController < ApplicationController
     @reservation.scooter = @scooter
     @reservation.save
     redirect_to reservations_path
+  end
+
+  def refresh_price
   end
 
   private

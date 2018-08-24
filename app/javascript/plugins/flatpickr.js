@@ -7,5 +7,9 @@ flatpickr("#rangeStart", {
     dateFormat: 'd/m/Y',
     minDate: "today",
     "locale": French,
+    onChange: function(selectedDates, dateStr, instance) {
+      let scooterId = document.getElementById('scooter').dataset.id
+      $.ajax({url: `/scooters/${scooterId}/refresh_price`});
+    },
     "plugins": [new rangePlugin({ input: "#rangeEnd"})]
 });

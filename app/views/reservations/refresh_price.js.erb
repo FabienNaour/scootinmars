@@ -1,0 +1,33 @@
+function refreshPrice(innerHTML) {
+  const newPrice = document.getElementById('prix');
+  newPrice.innerHTML = innerHTML;
+}
+
+function dateFormat(date) {
+  var dateParts = date.split("/");
+  return new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+}
+
+function daysBetween() {
+  let dateDebut = document.getElementById('rangeStart').value;
+  let dateFin = document.getElementById('rangeEnd').value;
+  //Get 1 day in milliseconds
+  var one_day=1000*60*60*24;
+
+  var date1_ms = Date.parse(dateFormat(dateDebut));
+  var date2_ms = Date.parse(dateFormat(dateFin));
+
+  // Calculate the difference in milliseconds
+  var difference_ms = date2_ms - date1_ms;
+
+  // Convert back to days and return
+  return Math.floor(difference_ms/one_day);
+}
+
+// console.log(jours, price);
+
+// $('input').change(function(){
+//   refreshPrice('<%# jours * @scooter.prix %>€');
+// });
+
+refreshPrice(`${daysBetween() * parseInt('<%= @scooter.prix %>')} €`);

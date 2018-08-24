@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :scooters, only: :index do
     resources :reservations, only: [:new, :create]
+    get '/refresh_price', to: 'reservations#refresh_price'
   end
   resources :reservations, only: :index
   root to: 'scooters#index'

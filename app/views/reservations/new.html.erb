@@ -1,4 +1,4 @@
-<div class="container">
+<div id="scooter" class="container" data-id="<%= @scooter.id %>">
   <h1>Votre Réservation</h1>
   <div class="reservation-card">
     <div class="row">
@@ -7,14 +7,14 @@
           <img src="<%= @scooter.url %>" alt="scooter img" class="scooter_photo">
         </div>
       </div>
-      <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+      <div class="col-xs-12 col-sm-3 col-sm-offset-1">
         <div class="reservation_form">
-          <%= simple_form_for [@scooter, @reservation] do |f| %>
+          <%= simple_form_for([@scooter, @reservation]) do |f| %>
             <%= f.input :date_debut, input_html: { id: "rangeStart", placeholder: "choisir une date" } %>
             <%= f.input :date_fin, input_html: {id: "rangeEnd", placeholder: "choisir une date" } %>
-            <div class="prix">
+            <div id="prix">
             </div>
-            <%= f.submit "réserver", class: "btn btn-primary" %>
+            <%= f.submit "réserver", class: "btn btn-primary btn-block" %>
           <% end %>
         </div>
       </div>
