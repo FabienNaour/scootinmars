@@ -9,21 +9,21 @@ puts " lancement des seeds"
 
 
 boutique1 = Boutique.create(
-    nom: 'Boutique Paradis, contactez notre assistant virtuel pour plus de détails',
+    nom: 'Boutique Paradis',
     adresse: '160 rue paradis 13006 marseille',
     email: 'topscooter@gmail.com',
     telephone: '06-22-12-13-14'
   )
 sleep 5
 boutique2 = Boutique.create(
-    nom: 'Boutique des catalans, contactez notre assistant virtuel pour plus de détails',
+    nom: 'Boutique des catalans',
     adresse: '15 rue girardin 13007 marseille',
     email: 'marseillescooter@hotmail.com',
     telephone: '06-14-00-13-14'
   )
 sleep 5
 boutique3 = Boutique.create(
-    nom: 'Boutique du panier, contactez notre assistant virtuel pour plus de détails',
+    nom: 'Boutique du panier',
     adresse: '25 rue du refuge 13002 marseille',
     email: 'panierscooter@hotmail.com',
     telephone: '06-00-01-02-03'

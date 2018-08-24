@@ -38,7 +38,7 @@ data-markers="<%= @markers.to_json %>"
     <script>var LandbotLiveConfig = { index: 'https://landbot.io/u/H-68806-AWRGC0YZYLYJPVUK/index.html', accent: '#ef0075' };</script><script src="https://static.helloumi.com/umiwebchat/umiwebchat.js?v=1534976287004" defer></script>
   </div>
 
-  <div class="col-xs-6 right">
+  <div class="col-xs-6">
     <%= simple_form_for :search, url: scooters_path(anchor:"scooters-index"), method: :get do |f| %>
     <%= f.input :query, input_html: {value: params.dig(:search, :query)}, autofocus: true, class: "form-control", placeholder: "Chercher un scooter" %>
     <%= f.input :boutique_id, collection: Boutique.all.pluck(:nom, :id), selected: params.dig(:search, :boutique_id) %>
