@@ -20,7 +20,10 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const mapElement = document.getElementById('map');
-const markers = JSON.parse(mapElement.dataset.markers);
+//const markers = JSON.parse(mapElement.dataset.markers);
+const spots = JSON.parse(mapElement.dataset.spots);
+console.log(spots);
+
 // MODIF FAB
 // [{
 //   "name": "Top Scooter",
@@ -32,36 +35,41 @@ const markers = JSON.parse(mapElement.dataset.markers);
 //   "name": "Scooter au panier",
 //   "markers": [5.3676323, 43.2986109]
 // }]
-// const ma = JSON.parse(mapElement.dataset.markers);
-// console.log(ma[0]["name"])
-// console.log(ma[0]["markers"])
-// console.log(ma[0]["markers"][0])
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmFiaWVubmFvdXIiLCJhIjoiY2psNTRsZDAyMHJnODNwcThueTZtZ2VsNyJ9.fGDPKWN6bzi5AAGizI-h8A';
 
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    center: markers[0],
+//    center: markers[0],
     zoom: 12
 });
 
 
-markers.forEach((marker) => {
+// MODIF FAB markers.forEach((marker) => {
+
+//   new mapboxgl.Marker({color: '#ef0075'})
+//   .setLngLat(marker)
+//   .setPopup(new mapboxgl.Popup().setHTML('<h4>Boutique</h4>'))
+//   .addTo(map);
+// })
+spots.forEach((spot) => {
 
   new mapboxgl.Marker({color: '#ef0075'})
-  .setLngLat(marker)
-  .setPopup(new mapboxgl.Popup().setHTML('<h4>Boutique</h4>'))
+  .setLngLat(spot.markers)
+  .setPopup(new mapboxgl.Popup().setHTML(`<h4>${spot.name}</h4>`))
   .addTo(map);
 })
 
-
 const bounds = new mapboxgl.LngLatBounds();
 
-markers.forEach(function(m) {
-    bounds.extend(m);
+// markers.forEach(function(m) {
+//     bounds.extend(m);
+// });
+spots.forEach(function(spot) {
+    bounds.extend(spot.markers);
 });
-
 map.fitBounds(bounds, { padding: 100 });
 
 

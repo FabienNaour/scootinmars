@@ -24,25 +24,25 @@ skip_before_action :authenticate_user! , only:[:index , :show]
     #   }
     # end
     # MAPBOX
-    @boutiques = Boutique.where.not(latitude: nil, longitude: nil)
-    @markers = @boutiques.map do |boutique|
-      [
-        boutique.longitude,
-        boutique.latitude
-      ]
-    end
+    # @boutiques = Boutique.where.not(latitude: nil, longitude: nil)
+    # @markers = @boutiques.map do |boutique|
+    #   [
+    #     boutique.longitude,
+    #     boutique.latitude
+    #   ]
+    # end
 
     # MODIF FABIEN
-    # @boutiques = Boutique.where.not(latitude: nil, longitude: nil)
-    # @boutiqueparam = @boutiques.map do |boutique|
-    #   {
-    #     "name": boutique.nom,
-    #     "markers": [
-    #       boutique.longitude,
-    #       boutique.latitude
-    #     ]
-    #   }
-    #   end
+    @boutiques = Boutique.where.not(latitude: nil, longitude: nil)
+    @spots = @boutiques.map do |boutique|
+      {
+        name: boutique.nom,
+        markers: [
+          boutique.longitude,
+          boutique.latitude
+        ]
+      }
+      end
   end
 
   def show
