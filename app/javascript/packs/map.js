@@ -43,7 +43,8 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
 //    center: markers[0],
-    zoom: 12
+    zoom: 12,
+
 });
 
 
@@ -70,7 +71,7 @@ const bounds = new mapboxgl.LngLatBounds();
 spots.forEach(function(spot) {
     bounds.extend(spot.markers);
 });
-map.fitBounds(bounds, { padding: 100 });
+map.fitBounds(bounds, { padding: 100, animate: false });
 
 
 
