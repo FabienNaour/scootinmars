@@ -1,5 +1,3 @@
-
-
 puts "destruction des scooters, resa et boutiques"
 Reservation.destroy_all
 Scooter.destroy_all
@@ -11,21 +9,21 @@ puts " lancement des seeds"
 
 
 boutique1 = Boutique.create(
-    nom: 'Top Scooter',
+    nom: 'Boutique Paradis, contactez notre assistant virtuel pour plus de détails',
     adresse: '160 rue paradis 13006 marseille',
     email: 'topscooter@gmail.com',
     telephone: '06-22-12-13-14'
   )
 sleep 5
 boutique2 = Boutique.create(
-    nom: 'Marseille Scooter',
+    nom: 'Boutique des catalans, contactez notre assistant virtuel pour plus de détails',
     adresse: '15 rue girardin 13007 marseille',
     email: 'marseillescooter@hotmail.com',
     telephone: '06-14-00-13-14'
   )
 sleep 5
 boutique3 = Boutique.create(
-    nom: 'Scooter au panier',
+    nom: 'Boutique du panier, contactez notre assistant virtuel pour plus de détails',
     adresse: '25 rue du refuge 13002 marseille',
     email: 'panierscooter@hotmail.com',
     telephone: '06-00-01-02-03'
@@ -56,18 +54,6 @@ scooter2 = Scooter.new(
 scooter2.boutique = boutique2
 scooter2.save!
 
-scooter2a = Scooter.new(
-   marque: 'Yamaha' ,
-   modele: 'cygnus X',
-   annee: '2010',
-   kilometrage: 5502,
-   categorie: '125 cm3',
-   prix: '13',
-   url: "https://i.ytimg.com/vi/t3ZS0yL-Ihc/hqdefault.jpg"
-)
-scooter2a.boutique = boutique3
-scooter2a.save!
-
 scooter3 = Scooter.new(
    marque: 'PIAGGIO',
    modele: 'Beverly 350 Sport Touring' ,
@@ -79,6 +65,18 @@ scooter3 = Scooter.new(
 )
 scooter3.boutique = boutique3
 scooter3.save!
+
+scooter3a = Scooter.new(
+   marque: 'PIAGGIO',
+   modele: 'Beverly 350 Sport Touring' ,
+   annee: '2017' ,
+   kilometrage: 6700,
+   categorie: '350 cm3',
+   prix: '10',
+   url:"https://media.motoservices.com/media/cache/vehicle_detail/media/vehicle/185/Beverly%20SportTouring.jpg"
+)
+scooter3a.boutique = boutique1
+scooter3a.save!
 
 scooter4 = Scooter.new(
    marque: 'MBK',
@@ -141,6 +139,185 @@ scooter7.save!
 scooter8.boutique = boutique2
 scooter8.save!
 
+  scooter8a = Scooter.new(
+  marque: 'PIAGGIO' ,
+  modele: 'MEDLEY 125 I-GET ABS' ,
+  annee: '2018' ,
+  kilometrage: 500,
+  categorie: '125 cm3',
+  prix: '50',
+  url: "http://www.piaggio.com/mediaObject/piaggio/master/global/models/gamma-medley/piaggio-medley-125-150-abs/Medley125_3-4AntDX_BiancoPerla/original/Medley125_3-4AntDX_BiancoPerla.png"
+)
+
+scooter8a.boutique = boutique1
+scooter8a.save!
+
+  scooter9 = Scooter.new(
+  marque: ' PINK' ,
+  modele: 'Pink Me' ,
+  annee: '2018' ,
+  kilometrage: 2000,
+  categorie: '50 cm3',
+  prix: '15',
+  url: "https://www.bordeaux-trip.fr/wp-content/uploads/2018/01/Pink-Style.png"
+  )
+  scooter9.boutique = boutique1
+  scooter9.save!
+
+
+scooter10 = Scooter.new(
+  marque: ' Peugeot' ,
+  modele: 'Tweet 50' ,
+  annee: '2015' ,
+  kilometrage: 15000,
+  categorie: '50 cm3',
+  prix: '8',
+  url: "https://www.albertmotosbicis.com/wp-content/uploads/2017/06/Peugeot-Tweet-50.jpg"
+  )
+  scooter10.boutique = boutique2
+  scooter10.save!
+
+
+scooter11 = Scooter.new(
+  marque: ' HONDA' ,
+  modele: 'Honda-forza-125' ,
+  annee: '2018' ,
+  kilometrage: 100,
+  categorie: '125 cm3',
+  prix: '20',
+  url: "https://media.motoservices.com/media/cache/paragraph_picture/media/paragraph//honda-forza-125-2015-11.jpg"
+)
+scooter11.boutique = boutique3
+scooter11.save!
+
+
+scooter12 = Scooter.new(
+  marque: ' YAMAHA' ,
+  modele: 'Yamaha-xmax-125' ,
+  annee: '2017' ,
+  kilometrage: 1000,
+  categorie: '125 cm3',
+  prix: '18',
+  url: "https://media.motoservices.com/media/cache/vehicle_detail/media/vehicle/1094/Yamaha-xmax-125-2014.jpg"
+)
+scooter12.boutique = boutique1
+scooter12.save!
+
+
+scooter13 = Scooter.new(
+  marque: ' SYM' ,
+  modele: 'MIO 50' ,
+  annee: '2016' ,
+  kilometrage: 1000,
+  categorie: '50 cm3',
+  prix: '12',
+  url: "https://media.motoservices.com/media/cache/ad/media/ads/ad-220511.jpg"
+)
+scooter13.boutique = boutique2
+scooter13.save!
+
+scooter14 = Scooter.new(
+  marque: ' YAMAHA' ,
+  modele: 'Yamaha cygnus x ' ,
+  annee: '2009' ,
+  kilometrage: 5502,
+  categorie: '125 cm3',
+  prix: '7',
+  url: "https://media.motoservices.com/media/cache/ad/media/ads/ad-224217.jpg"
+)
+scooter14.boutique = boutique3
+scooter14.save!
+
+scooter15 = Scooter.new(
+  marque: ' HONDA' ,
+  modele: 'PCX 125' ,
+  annee: '2009' ,
+  kilometrage: 17100,
+  categorie: '125 cm3',
+  prix: '12',
+  url: "https://media.motoservices.com/media/cache/ad/media/ads/ad-221732.jpg"
+)
+scooter15.boutique = boutique1
+scooter15.save!
+
+
+scooter16 = Scooter.new(
+  marque: ' MBK' ,
+  modele: 'OVETTO 4 temos UBS' ,
+  annee: '2013' ,
+  kilometrage:  24500,
+  categorie: '50 cm3',
+  prix: '15',
+  url: "https://media.motoservices.com/media/cache/ad/media/ads/ad-224215.jpg"
+)
+scooter16.boutique = boutique2
+scooter16.save!
+
+scooter17 = Scooter.new(
+  marque: ' YAMAHA' ,
+  modele: 'Xmax iron Max abs' ,
+  annee: '2016' ,
+  kilometrage: 3700,
+  categorie: '125 cm3',
+  prix: '17',
+  url: "https://media.motoservices.com/media/cache/ad/media/ads/ad-222894.jpg"
+)
+scooter17.boutique = boutique3
+scooter17.save!
+
+scooter18 = Scooter.new(
+  marque: ' PIAGGIO' ,
+  modele: 'zip-50-4T-piaggio' ,
+  annee: '2018' ,
+  kilometrage: 3000,
+  categorie: '50 cm3',
+  prix: '16',
+  url: "https://www.urgence-scooters.com/wp-content/uploads/zip-50-4T-piaggio.jpg"
+)
+scooter18.boutique = boutique1
+scooter18.save!
+
+scooter19 = Scooter.new(
+  marque: ' PIAGGIO' ,
+  modele: 'Medley 125 S' ,
+  annee: '2017' ,
+  kilometrage: 1000,
+  categorie: '125 cm3',
+  prix: '15',
+  url: "https://www.urgence-scooters.com/wp-content/uploads/scootermedley-1.jpg"
+)
+scooter19.boutique = boutique2
+scooter19.save!
+
+scooter19a = Scooter.new(
+  marque: ' PIAGGIO' ,
+  modele: 'Medley 125 S' ,
+  annee: '2017' ,
+  kilometrage: 1000,
+  categorie: '125 cm3',
+  prix: '15',
+  url: "https://www.urgence-scooters.com/wp-content/uploads/scootermedley-1.jpg"
+)
+scooter19a.boutique = boutique1
+scooter19a.save!
+
+scooter20 = Scooter.new(
+  marque: ' PIAGGIO' ,
+  modele: 'GTS Touring 125' ,
+  annee: '2016' ,
+  kilometrage: 1800,
+  categorie: '125 cm3',
+  prix: '10',
+  url: "https://www.urgence-scooters.com/wp-content/uploads/touring-125-marron.jpg"
+)
+scooter20.boutique = boutique1
+scooter20.save!
+
+
+
+
+
+
 resa1 = Reservation.new(
   date_debut: "21/08/2018",
   date_fin: "22/08/2018"
@@ -158,7 +335,7 @@ resa3 = Reservation.new(
 
 resa4 = Reservation.new(
   date_debut: "10/08/2018",
-  date_fin: "12/08/2018"
+  date_fin: "30/08/2018"
 )
 
 useradmin = User.new(
@@ -206,16 +383,14 @@ user2.save!
 user3.save!
 user4.save!
 
-resa1.scooter = scooter1
-resa1.user = user1
-resa1.save!
+# resa1.scooter = scooter1
+# resa1.user = user1
+# resa1.save!
 
-resa2.scooter = scooter2
-resa2.user = user2
-resa2.save!
+# resa2.scooter = scooter2
+# resa2.user = user2
+# resa2.save!
 
-resa3.scooter = scooter3
-resa3.user = user3
-resa3.save!
+
 
 puts "seeds terminés"
