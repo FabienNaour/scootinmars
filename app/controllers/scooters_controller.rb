@@ -2,16 +2,19 @@ class ScootersController < ApplicationController
 skip_before_action :authenticate_user! , only:[:index , :show]
 
   def index
-    if params[:query].present?
+    #raise
+    @scooters = Scooter.all
+    @scooter= Scooter.new
+
+    if params[:search]
       sql_query = " \
         scooters.marque ILIKE :query \
         OR scooters.modele ILIKE :query \
         OR scooters.categorie ILIKE :query \
         "
-        @scooters = Scooter.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @scooters = Scooter.all
-      @scooter= Scooter.new
+        @scooters = @scooters.where(sql_query, query: "%#{params[:search][:query]}%") if params[:search][:query]
+        @scooters = @scooters.where(boutique_id: params[:search][:boutique_id]) if params[:search][:boutique_id]
+
     end
 
     # GOOGLE
