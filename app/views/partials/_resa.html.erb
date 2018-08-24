@@ -17,18 +17,18 @@
             <th></th>
             <th></th>
           </tr>
-          <tr>
+<!--           <tr>
             <td>DISPONIBILITÉ :</td>
             <td class="infos"><%= scooter.disponible %></td>
-          </tr>
+          </tr> -->
           <tr>
             <td>CATEGORIE :</td>
             <td class="infos"><%= scooter.categorie %></td>
           </tr>
-          <tr>
+<!--           <tr>
             <td>PERMIS :</td>
             <td class="infos"><%= scooter.permis %></td>
-          </tr>
+          </tr> -->
           <tr>
             <td>ANNÉE :</td>
             <td class="infos"><%= scooter.annee %></td>
@@ -44,8 +44,23 @@
         </table>
       </div>
       <div class="modal-footer">
-        <%= link_to 'réserver', new_scooter_reservation_path(scooter), class: "btn btn-primary" %>
+
       </div>
+      <% if current_user && current_user.permis %>
+          <div class="modal-footer">
+          <%= link_to 'réserver', new_scooter_reservation_path(scooter), class: "btn btn-primary" %>
+          </div>
+      <% elsif current_user%>
+          <div class="modal-footer modal-erreur">
+          <%= link_to'Téléchargez votre permis puis attendez notre validation ', edit_user_registration_path, class: "btn btn-primary" %>
+        </div>
+      <% else%>
+          <div class="modal-footer modal-erreur">
+          <%= link_to'Connectez vous pour reserver', new_user_session_path, class: "btn btn-primary" %>
+          </div>
+    <% end %>
     </div>
   </div>
 </div>
+<!--
+<p>Téléchargez votre permis, attendez la confirmation de validation</p> -->
